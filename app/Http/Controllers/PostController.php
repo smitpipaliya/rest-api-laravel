@@ -114,7 +114,7 @@ class PostController extends Controller
     {
         try {
             // Find Post
-            $post = Post::findOrFail($id);
+            $post = Post::find($id);
 
             if(!$post) {
               return response()->json([
@@ -165,7 +165,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         // Post Detail 
-        $post = Post::findOrFail($id);
+        $post = Post::find($id);
 
         if(!$post) {
             return response()->json([
